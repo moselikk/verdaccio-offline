@@ -3,6 +3,7 @@
 
 创建 verdaccio 离线镜像：
 > 联网的 linux 环境，需要 docker
+
 1. 拉取镜像 `docker pull verdaccio/verdaccio`
 2. 打包镜像 `docker save -o verdaccio.tar verdaccio/verdaccio:latest`
 3. 生成的镜像文件为 `verdaccio.tar`
@@ -29,4 +30,5 @@ V_PATH=/home/ming/verdaccio-config; docker run -it --rm --name verdaccio   -p 48
 ---
 
 > 可使用 `npm install --verbose` 安装依赖以获取更多 log 信息
+
 > 后续私服如需添加包在联网环境的机器中新建一个空 node 项目，安装所需包，然后执行以上 10-11 操作即可
