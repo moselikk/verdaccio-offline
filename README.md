@@ -1,8 +1,14 @@
 # 离线环境 npm 私服搭建 
 > offline verdaccio build
 
+创建 verdaccio 离线镜像：
+> 联网的 linux 环境，需要 docker
+1. 拉取镜像 `docker pull verdaccio/verdaccio`
+2. 打包镜像 `docker save -o verdaccio.tar verdaccio/verdaccio:latest`
+3. 生成的镜像文件为 `verdaccio.tar`
+
 操作步骤：
-1. 将项目所有文件拷贝至离线机器下，本项目暂时只支持 linux 机器作为私服服务器，私服依赖 docker
+1. 将项目所有文件及 verdaccio.tar 拷贝至离线机器下，本项目暂时只支持 linux 机器作为私服服务器，私服依赖 docker
 2. 在离线机器下运行 `docker load -i verdaccio.tar` 加载 verdaccio docker 镜像
 3. 将 `verdaccio-config.zip` 文件解压，假设解压后在目录 `/home/ming/verdaccio-config`
 4. 配置文件在 `/home/ming/verdaccio-config/conf/config.yaml` 中，可根据需要更改配置
